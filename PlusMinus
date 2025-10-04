@@ -1,0 +1,33 @@
+using System;
+
+class Solution
+{
+    static void plusMinus(int[] arr)
+    {
+        int n = arr.Length;
+        int posCount = 0, negCount = 0, zeroCount = 0;
+
+        for (int i = 0; i < n; i++)
+        {
+            if (arr[i] > 0) posCount++;
+            else if (arr[i] < 0) negCount++;
+            else zeroCount++;
+        }
+
+        Console.WriteLine($"{(double)posCount / n:F6}");
+        Console.WriteLine($"{(double)negCount / n:F6}");
+        Console.WriteLine($"{(double)zeroCount / n:F6}");
+    }
+
+    static void Main(string[] args)
+    {
+        int n = int.Parse(Console.ReadLine());
+        string[] inputs = Console.ReadLine().Split(' ');
+        int[] arr = new int[n];
+
+        for (int i = 0; i < n; i++)
+            arr[i] = int.Parse(inputs[i]);
+
+        plusMinus(arr);
+    }
+}
